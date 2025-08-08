@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de Restaurante</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container main-content">
+        <section id="reservation-section" class="section active">
+            <div class="form-container">
+                <h2>Faça sua Reserva</h2>
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="fullName">Nome:</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Celular:</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="peopleCount">Quantidade de Pessoas:</label>
+                        <input type="number" id="peopleCount" name="peopleCount" min="1" max="4" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservationDate">Data:</label>
+                        <input type="date" id="reservationDate" name="reservationDate" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Reservar</button>
+                </form>
+                <div id="reserva-error" class="error-message"></div>
+                <div id="reserva-success" class="success-message"></div>
+            </div>
+        </section>
+        <section id="consulta-section" class="section">
+            <div class="form-container">
+                <h2>Consultar Reserva por CPF</h2>
+                <form id="consulta-form">
+                    <div class="form-group">
+                        <input type="text" id="consulta-cpf" name="consulta-cpf" placeholder="Digite o CPF" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Consultar</button>
+                </form>
+                <div id="consulta-result"></div>
+            </div>
+        </section>
+        <section id="disponibilidade-section" class="section">
+            <div class="form-container">
+                <h2>Disponibilidade de Mesas</h2>
+                <form id="disponibilidade-form">
+                    <div class="form-group">
+                        <input type="date" id="disponibilidade-data" name="disponibilidade-data">
+                    </div>
+                    <button type="submit" class="submit-btn">Verificar</button>
+                </form>
+                <div id="disponibilidade-result"></div>
+            </div>
+        </section>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

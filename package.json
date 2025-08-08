@@ -1,0 +1,45 @@
+{
+  "name": "sistema-reservas-restaurante",
+  "version": "1.0.0",
+  "description": "Sistema de reservas para restaurante desenvolvido em HTML, CSS e JavaScript puro",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 4000 -o",
+    "dev": "npx live-server --port=4000 --open=/",
+    "build": "echo 'Build não necessário - projeto em vanilla JS'",
+    "test": "echo 'Testes manuais realizados'",
+    "lint": "echo 'Linting não configurado para vanilla JS'"
+  },
+  "keywords": [
+    "reservas",
+    "restaurante",
+    "javascript",
+    "html",
+    "css",
+    "api",
+    "frontend",
+    "vanilla-js"
+  ],
+  "author": "Desenvolvedor do Sistema de Reservas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/sistema-reservas-restaurante.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/sistema-reservas-restaurante/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/sistema-reservas-restaurante#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
