@@ -122,7 +122,10 @@ class ReservationApp {
         const validation = await ReservationValidator.validateReservation(reservationData);
         
         if (!validation.valid) {
-            utils.showModal('Erro de Validação', validation.errors.join('\n'));
+            if (window.formValidator) {
+                window.formValidator.clearAllErrors();
+                window.formValidator.highlightErrors(validation.errors);
+            }
             return;
         }
 
@@ -131,18 +134,15 @@ class ReservationApp {
             const response = await ReservationAPI.createReservation(reservationData);
             
             if (response.success) {
-                utils.showModal(
-                    'Reserva Confirmada!', 
-                    `Sua reserva foi realizada com sucesso!\n\nDetalhes:\nNome: ${reservationData.nome}\nData: ${utils.formatDate(reservationData.data)}\nPessoas: ${reservationData.quantidadePessoas}\n\nAguardamos sua presença!`
-                );
+                document.getElementById('reserva-success').textContent = 'Reserva confirmada com sucesso!';
                 utils.clearForm('reservation-form');
                 this.setupDateInput();
             } else {
-                utils.showModal('Erro', response.error || 'Erro ao criar reserva');
+                document.getElementById('reserva-error').textContent = response.error || 'Erro ao criar reserva';
             }
         } catch (error) {
             console.error('Erro ao criar reserva:', error);
-            utils.showModal('Erro', 'Erro interno do sistema. Tente novamente.');
+            document.getElementById('reserva-error').textContent = 'Erro interno do sistema. Tente novamente.';
         }
     }
 
@@ -158,7 +158,10 @@ class ReservationApp {
         // Validação básica
         const validation = AdminValidator.validateLogin(credentials);
         if (!validation.valid) {
-            utils.showModal('Erro de Validação', validation.errors.join('\n'));
+            if (window.formValidator) {
+                window.formValidator.clearAllErrors();
+                window.formValidator.highlightErrors(validation.errors);
+            }
             return;
         }
 
@@ -232,7 +235,7 @@ class ReservationApp {
             console.error('❌ Stack trace:', error.stack);
             console.error('❌ Tipo do erro:', typeof error);
             console.error('❌ Mensagem do erro:', error.message);
-            utils.showModal('Erro', 'Erro interno do sistema. Tente novamente.');
+            document.getElementById('reserva-error').textContent = 'Erro interno do sistema. Tente novamente.';
         }
     }
 

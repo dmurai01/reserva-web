@@ -68,20 +68,39 @@ const validateCPF = (cpf) => {
 };
 
 const validatePhone = (phone) => {
-    // Remove caracteres não numéricos
-    const cleanPhone = phone.replace(/\D/g, '');
+    // Remove caracteres não numéricos (proteção contra undefined)
+    const cleanPhone = (phone || '').replace(/\D/g, '');
     
     // Verifica se tem entre 10 e 11 dígitos (com DDD)
     return cleanPhone.length >= 10 && cleanPhone.length <= 11;
-};
+};;
 
 const validateDate = (dateString) => {
-    const selectedDate = new Date(dateString);
+    if (!dateString) return false;
+
+    let dateObj;
+
+    // Detecta formato DD/MM/YYYY
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateString)) {
+        const [day, month, year] = dateString.split('/').map(Number);
+        dateObj = new Date(year, month - 1, day);
+    } else if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+        // YYYY-MM-DD sem timezone issues
+        const [year, month, day] = dateString.split('-').map(Number);
+        dateObj = new Date(year, month - 1, day);
+    } else {
+        dateObj = new Date(dateString);
+    }
+
+    if (isNaN(dateObj.getTime())) return false;
+
+    // Zera horas para comparar apenas datas
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    return selectedDate >= today;
-};
+    today.setHours(0,0,0,0);
+    dateObj.setHours(0,0,0,0);
+
+    return dateObj >= today;
+};;
 
 // Funções de manipulação de DOM
 const showSection = (sectionId) => {
@@ -119,12 +138,18 @@ const closeModal = () => {
 };
 
 const showLoading = () => {
-    document.getElementById('loading').style.display = 'flex';
-};
+    const el = document.getElementById('loading');
+    if (el && el.style) {
+        el.style.display = 'flex';
+    }
+};;
 
 const hideLoading = () => {
-    document.getElementById('loading').style.display = 'none';
-};
+    const el = document.getElementById('loading');
+    if (el && el.style) {
+        el.style.display = 'none';
+    }
+};;
 
 const clearForm = (formId) => {
     const form = document.getElementById(formId);
@@ -325,29 +350,34 @@ const calculateStats = (reservations) => {
 const validateReservationForm = (formData) => {
     const errors = [];
     
+    const fullName = formData.fullName || formData.nome || '';
+    const cpf = formData.cpf || '';
+    const phone = formData.phone || formData.celular || '';
+    const peopleCount = parseInt(formData.peopleCount || formData.quantidadePessoas || '0', 10);
+    const reservationDate = formData.reservationDate || formData.data || '';
+    
     // Validação do nome
-    if (!formData.fullName || formData.fullName.trim().length < 3) {
+    if (!fullName || fullName.trim().length < 3) {
         errors.push('Nome completo deve ter pelo menos 3 caracteres');
     }
     
     // Validação do CPF
-    if (!validateCPF(formData.cpf)) {
+    if (!validateCPF(cpf)) {
         errors.push('CPF inválido');
     }
     
     // Validação do telefone
-    if (!validatePhone(formData.phone)) {
+    if (!validatePhone(phone)) {
         errors.push('Telefone inválido (deve incluir DDD)');
     }
     
     // Validação da quantidade de pessoas
-    const peopleCount = parseInt(formData.peopleCount);
     if (!peopleCount || peopleCount < 1 || peopleCount > 4) {
         errors.push('Quantidade de pessoas deve ser entre 1 e 4');
     }
     
     // Validação da data
-    if (!validateDate(formData.reservationDate)) {
+    if (!validateDate(reservationDate)) {
         errors.push('Data da reserva deve ser hoje ou uma data futura');
     }
     
