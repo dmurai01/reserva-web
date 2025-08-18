@@ -1,35 +1,10 @@
 # Sistema de Reservas - Restaurante
-
 Uma aplicação web moderna e responsiva para gerenciamento de reservas de restaurante, desenvolvida em HTML, CSS e JavaScript puro, que consome uma API REST.
 
-## 📋 Índice
-
-- [Visão Geral](#visão-geral)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Instalação e Configuração](#instalação-e-configuração)
-- [Como Usar](#como-usar)
-- [API Endpoints](#api-endpoints)
-- [Requisitos Funcionais](#requisitos-funcionais)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-
 ## 🎯 Visão Geral
-
 O Sistema de Reservas é uma aplicação web completa que permite aos clientes fazerem reservas em um restaurante de forma simples e intuitiva, enquanto oferece aos administradores um painel completo para gerenciar todas as reservas.
 
-### Características Principais
-
-- **Interface Moderna**: Design responsivo e intuitivo
-- **Validação em Tempo Real**: Feedback imediato para o usuário
-- **Painel Administrativo**: Gerenciamento completo de reservas
-- **Verificação de Disponibilidade**: Sistema inteligente de verificação de mesas
-- **Validação de CPF**: Algoritmo completo de validação
-- **Responsivo**: Funciona perfeitamente em dispositivos móveis
-
 ## ✨ Funcionalidades
-
 ### Para Clientes
 - ✅ Cadastro de reservas com validação completa
 - ✅ Verificação de disponibilidade em tempo real
@@ -47,22 +22,6 @@ O Sistema de Reservas é uma aplicação web completa que permite aos clientes f
 - ✅ Exportação de dados (CSV/JSON)
 - ✅ Relatórios detalhados
 - ✅ Gerenciamento de configurações
-
-## 🛠 Tecnologias Utilizadas
-
-### Frontend
-- **HTML5**: Estrutura semântica e acessível
-- **CSS3**: Design moderno com Flexbox e Grid
-- **JavaScript ES6+**: Lógica de negócio e interações
-- **Font Awesome**: Ícones modernos
-- **Google Fonts**: Tipografia Inter
-
-### Características Técnicas
-- **Vanilla JavaScript**: Sem dependências externas
-- **Modular**: Código organizado em módulos
-- **Responsivo**: Mobile-first design
-- **Acessível**: Seguindo padrões WCAG
-- **Performance**: Otimizado para velocidade
 
 ## 📁 Estrutura do Projeto
 
@@ -125,7 +84,6 @@ reserva-web/
 - Navegador moderno (Chrome, Firefox, Safari, Edge)
 
 ### Passos para Instalação
-
 1. **Clone ou baixe o projeto**
    ```bash
    git clone [url-do-repositorio]
@@ -148,7 +106,6 @@ reserva-web/
    ```
 
 ### Configuração da API
-
 A aplicação espera que a API esteja disponível em `http://localhost:3000` com os seguintes endpoints:
 
 #### Reservas
@@ -181,7 +138,6 @@ A aplicação espera que a API esteja disponível em `http://localhost:3000` com
    - Aguarde a confirmação
 
 ### Para Administradores
-
 1. **Acesse o login**
    - Clique em "Administrador" no menu
 
