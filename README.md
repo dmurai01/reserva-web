@@ -1,13 +1,10 @@
 # Sistema de Reservas - Restaurante
-
 Uma aplicação web moderna e responsiva para gerenciamento de reservas de restaurante, desenvolvida em HTML, CSS e JavaScript puro, que consome uma API REST.
 
 ## 🎯 Visão Geral
-
 O Sistema de Reservas é uma aplicação web completa que permite aos clientes fazerem reservas em um restaurante de forma simples e intuitiva, enquanto oferece aos administradores um painel completo para gerenciar todas as reservas.
 
 ## ✨ Funcionalidades
-
 ### Para Clientes
 - ✅ Cadastro de reservas com validação completa
 - ✅ Verificação de disponibilidade em tempo real
@@ -25,15 +22,6 @@ O Sistema de Reservas é uma aplicação web completa que permite aos clientes f
 - ✅ Exportação de dados (CSV/JSON)
 - ✅ Relatórios detalhados
 - ✅ Gerenciamento de configurações
-
-## 🛠 Tecnologias Utilizadas
-
-### Frontend
-- **HTML5**: Estrutura semântica e acessível
-- **CSS3**: Design moderno com Flexbox e Grid
-- **JavaScript ES6+**: Lógica de negócio e interações
-- **Font Awesome**: Ícones modernos
-- **Google Fonts**: Tipografia Inter
 
 ## 📁 Estrutura do Projeto
 
@@ -53,7 +41,6 @@ reserva-web/
 ## 🚀 Instalação e Configuração
 
 ### Passos para Instalação
-
 1. **Clone ou baixe o projeto**
    ```bash
    git clone `https://github.com/dmurai01/reserva-web.git`
