@@ -22,32 +22,10 @@
    http://localhost:4000
    ```
 
-## Opção 2: Usando npm run dev (Desenvolvimento)
-
-Para desenvolvimento com auto-reload:
-
-```bash
-npm run dev
-```
-
-A aplicação será aberta automaticamente em `http://localhost:4000`
-
-## Opção 3: Usando http-server diretamente
-
-```bash
-npx http-server -p 4000 -o
-```
-
-## Opção 4: Usando live-server diretamente
-
-```bash
-npx live-server --port=4000 --open=/
-```
-
 ## ⚠️ Importante
 
 - Certifique-se de que a **API REST está rodando em `http://localhost:3000`**
-- A aplicação frontend rodará em `http://localhost:4000`
+- A aplicação frontend rodará em `http://localhost:4000` e admin `http://localhost:4000/admin.html`
 - Se a API estiver em uma porta diferente, edite o arquivo `js/utils.js` e altere a constante `API_BASE_URL`
 
 ## 🔧 Configuração da API
@@ -70,11 +48,6 @@ A aplicação espera que a API esteja disponível com os seguintes endpoints:
 **Erro: "Cannot find module 'http-server'"**
 ```bash
 npm install -g http-server
-```
-
-**Erro: "Cannot find module 'live-server'"**
-```bash
-npm install -g live-server
 ```
 
 **Aplicação não conecta com a API**

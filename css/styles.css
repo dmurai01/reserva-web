@@ -629,3 +629,57 @@ body {
         font-size: 1.5rem;
     }
 } 
+
+/* Responsividade adicional */
+
+/* Telas pequenas (até 480px) */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reservation-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* Telas médias (até 768px) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
