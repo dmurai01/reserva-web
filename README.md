@@ -1,8 +1,5 @@
 # Sistema de Reservas - Restaurante
-Uma aplicação web moderna e responsiva para gerenciamento de reservas de restaurante, desenvolvida em HTML, CSS e JavaScript puro, que consome uma API REST.
-
-## 🎯 Visão Geral
-O Sistema de Reservas é uma aplicação web completa que permite aos clientes fazerem reservas em um restaurante de forma simples e intuitiva, enquanto oferece aos administradores um painel completo para gerenciar todas as reservas.
+Uma aplicação web moderna e responsiva para gerenciamento de reservas de restaurante, desenvolvida em HTML, CSS e JavaScript puro, que consome a API Reserva-api (`https://github.com/dmurai01/reserva-api.git`).
 
 ## ✨ Funcionalidades
 ### Para Clientes
@@ -52,6 +49,7 @@ reserva-web/
    ```
 
 3. **Verifique a API**
+   - A API deve estar baixada e instalada (`https://github.com/dmurai01/reserva-api.git`)
    - Certifique-se de que a API está rodando em `http://localhost:3000`
    - Acesse `http://localhost:3000/api-docs` para verificar a documentação
 
@@ -70,3 +68,35 @@ reserva-web/
 - **Comentários**: Em português
 - **Indentação**: 4 espaços
 
+### Documentações do Projeto
+- Acesse `https://github.com/dmurai01/reserva-web/wiki`
+
+### Instrução para execução dos testes automatizados
+
+1. **Certifique-se de que a aplicação está rodando**
+   ```bash
+   npm start
+   ```
+
+2. **Execute os testes automatizados**
+   ```bash
+   npx cypress run
+   ```
+   Ou para abrir o Cypress em modo interativo:
+   ```bash
+   npx cypress open
+   ```
+
+3. **Visualize os relatórios de testes**
+   - Após a execução dos testes, os relatórios HTML serão gerados na pasta `cypress/reports`
+   - Abra o arquivo `cypress/reports/html/index.html` no seu navegador para visualizar o relatório detalhado
+   - Os relatórios incluem:
+     - Resumo de testes passados/falhados
+     - Tempo de execução
+     - Screenshots de falhas (quando ocorrem)
+     - Detalhes de cada caso de teste
+
+4. **Estrutura dos testes**
+   - Os testes estão organizados em arquivos `.cy.js` na pasta `cypress/e2e/`
+   - Testes de reserva: `cypress/e2e/reserva.cy.js`
+   - Testes de administração: `cypress/e2e/admin.cy.js`
