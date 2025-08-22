@@ -26,7 +26,7 @@ describe('Reserva', () => {
     })
   })
 
-  it.only('Tentar criar uma reserva para uma data já preenchida com 5 reservas, deve retornar mensagem de erro (US01 - CT-04)', () => {
+  it('Tentar criar uma reserva para uma data já preenchida com 5 reservas, deve retornar mensagem de erro (US01 - CT-04)', () => {
     const data = faker.date.future()
     const dataFormatada = data.toISOString().split('T')[0];
 
