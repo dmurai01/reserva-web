@@ -69,7 +69,7 @@ reserva-web/
 - **Indentação**: 4 espaços
 
 ### Documentações do Projeto
-- Acesse `https://github.com/dmurai01/reserva-web/wiki`
+- Acesse https://github.com/dmurai01/reserva-web/wiki
 
 ### Instrução para execução dos testes automatizados
 
