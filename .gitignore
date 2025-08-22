@@ -62,3 +62,6 @@ docs/
 # Arquivos de configuração específicos do ambiente
 config.local.js
 settings.local.json 
+
+# Relarorio de testes
+reports/
